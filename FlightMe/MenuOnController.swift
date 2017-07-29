@@ -5,9 +5,12 @@
 //  Created by MIHAIL BUTNARU on 25/07/2017.
 //  Copyright © 2017 MIHAIL BUTNARU. All rights reserved.
 //
-
 import UIKit
 
 class MenuOnController: UIViewController {
+    
+    @IBOutlet var backGroundMenu: UIImageView!
+    
+    
 
 }
