@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F2315" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F2315" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -9,103 +9,203 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlightMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bej-iG-PIc"/>
-                        <viewControllerLayoutGuide type="bottom" id="dXt-wT-A8W"/>
+                        <viewControllerLayoutGuide type="top" id="QJw-VQ-8mv"/>
+                        <viewControllerLayoutGuide type="bottom" id="WjP-Fo-PBo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-ql-bhV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="736" id="CDA-xu-H2F"/>
-                                    <constraint firstAttribute="width" constant="414" id="xOg-zF-MBy"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-ql-bhV">
+                                <rect key="frame" x="0.0" y="-5" width="600" height="741"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88y-nf-XAX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <action selector="ClickTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4aQ-1J-ISl"/>
-                                    <segue destination="xkS-v3-oNV" kind="presentation" modalPresentationStyle="fullScreen" id="NIw-zy-hFP"/>
+                                    <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cv-LM-VZN"/>
+                                    <segue destination="xkS-v3-oNV" kind="modal" modalPresentationStyle="fullScreen" id="NIw-zy-hFP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nF0-FC-izv">
-                                <rect key="frame" x="135" y="190" width="130" height="177"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flightText" translatesAutoresizingMaskIntoConstraints="NO" id="flN-an-8se">
+                                <rect key="frame" x="59" y="286" width="202" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="yqH-aF-vms"/>
+                                    <constraint firstAttribute="height" constant="37" id="zum-OJ-Dim"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flightText" translatesAutoresizingMaskIntoConstraints="NO" id="flN-an-8se">
-                                <rect key="frame" x="109" y="375" width="187" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nF0-FC-izv">
+                                <rect key="frame" x="108" y="116" width="121" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="5VM-oS-9aY"/>
+                                    <constraint firstAttribute="width" constant="121" id="sZG-xD-EyV"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textMain2" translatesAutoresizingMaskIntoConstraints="NO" id="5dH-XP-HCd">
-                                <rect key="frame" x="150" y="420" width="216" height="23"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textMain2" translatesAutoresizingMaskIntoConstraints="NO" id="5dH-XP-HCd">
+                                <rect key="frame" x="89" y="329" width="216" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="8BT-jd-1Bl"/>
+                                    <constraint firstAttribute="width" constant="216" id="pft-jH-VUn"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dXt-wT-A8W" firstAttribute="top" secondItem="46Z-ql-bhV" secondAttribute="bottom" id="2Hr-Ta-wCz"/>
-                            <constraint firstItem="46Z-ql-bhV" firstAttribute="top" secondItem="bej-iG-PIc" secondAttribute="bottom" id="Hmx-js-e4v"/>
-                            <constraint firstAttribute="trailing" secondItem="46Z-ql-bhV" secondAttribute="trailing" id="Y5J-Ca-4Tz"/>
-                            <constraint firstItem="46Z-ql-bhV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uKN-bo-nTO"/>
+                            <constraint firstItem="nF0-FC-izv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-86" id="WKX-z6-B8T"/>
+                            <constraint firstItem="flN-an-8se" firstAttribute="top" secondItem="nF0-FC-izv" secondAttribute="bottom" constant="6" id="dOv-od-gQz"/>
+                            <constraint firstItem="flN-an-8se" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gW8-3d-7ox"/>
+                            <constraint firstItem="nF0-FC-izv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="8.5" id="m1t-iQ-HxL"/>
+                            <constraint firstItem="5dH-XP-HCd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="56.5" id="uYG-2A-pJ5"/>
+                            <constraint firstItem="5dH-XP-HCd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="37" id="zRC-kZ-Bea"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337" y="369"/>
+            <point key="canvasLocation" x="65" y="483"/>
         </scene>
         <!--MenuController-->
         <scene sceneID="FT2-57-Qxr">
             <objects>
                 <viewController title="MenuController" wantsFullScreenLayout="YES" id="xkS-v3-oNV" customClass="MenuOnController" customModule="FlightMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dg9-gg-kgV"/>
-                        <viewControllerLayoutGuide type="bottom" id="iq1-3o-tF9"/>
+                        <viewControllerLayoutGuide type="top" id="BSH-Tw-rzz"/>
+                        <viewControllerLayoutGuide type="bottom" id="hdi-bU-74l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yc7-CY-0qS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Mo7-Sw-Ajl">
-                                <rect key="frame" x="-4" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundFinal" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-S1-rGx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-fK-ope">
-                                <rect key="frame" x="107" y="68" width="107" height="34"/>
-                                <state key="normal" title="Gatwick"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-01-bxd">
+                                <rect key="frame" x="92" y="359" width="119" height="114"/>
+                                <state key="normal" image="stantead"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-01-bxd">
-                                <rect key="frame" x="107" y="172" width="105" height="36"/>
-                                <state key="normal" title="Stanstead"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anl-Ro-EC4">
+                                <rect key="frame" x="92" y="491" width="119" height="69"/>
+                                <state key="normal" image="heathrow"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anl-Ro-EC4">
-                                <rect key="frame" x="107" y="280" width="107" height="36"/>
-                                <state key="normal" title="Heathrow"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-O9-dmr">
+                                <rect key="frame" x="93" y="237" width="119" height="114"/>
+                                <state key="normal" image="luton"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-O9-dmr">
-                                <rect key="frame" x="107" y="397" width="107" height="36"/>
-                                <state key="normal" title="Luton"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-fK-ope">
+                                <rect key="frame" x="92" y="115" width="119" height="114"/>
+                                <state key="normal" image="gatwick"/>
+                                <connections>
+                                    <segue destination="3va-NL-QUt" kind="push" splitViewControllerTargetIndex="1" id="Yaq-TF-3xb"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hLG-pz-CR4">
+                                <rect key="frame" x="103" y="33" width="115" height="41"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLS-iJ-CTM">
+                                <rect key="frame" x="272" y="519" width="48" height="49"/>
+                                <state key="normal" image="buttonAbout"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuM" translatesAutoresizingMaskIntoConstraints="NO" id="n7N-4H-MHs">
+                                <rect key="frame" x="142" y="97" width="19" height="18"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dKm-y0-kS4"/>
-                    <connections>
-                        <outlet property="backGroundMenu" destination="Mo7-Sw-Ajl" id="abd-XJ-dBK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNA-9h-YpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.125" y="536.61971830985908"/>
+            <point key="canvasLocation" x="556" y="473"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4EM-Md-tOL">
+            <objects>
+                <viewController id="grP-e4-zP6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9PG-ii-VI2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ipn-WW-luI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g4g-Ex-1Hq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDY-Zg-dNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="-180"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xaJ-1R-c4I">
+            <objects>
+                <viewController id="ejx-S7-1xT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Jf-xt-MNG"/>
+                        <viewControllerLayoutGuide type="bottom" id="LUo-Ve-xGn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kbh-Lp-hhj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMh-5P-R6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="1174"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="80g-aL-Srm">
+            <objects>
+                <viewController id="7di-Ur-71f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c4Y-cI-O1q"/>
+                        <viewControllerLayoutGuide type="bottom" id="g8e-P4-bfc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BsU-bQ-lBH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIZ-hq-prI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="468"/>
+        </scene>
+        <!--Gatwick-->
+        <scene sceneID="Bxg-Wq-WpI">
+            <objects>
+                <viewController title="Gatwick" id="3va-NL-QUt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ye9-Xg-1tg"/>
+                        <viewControllerLayoutGuide type="bottom" id="xks-m4-1uH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="57z-dU-jam">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0vv-ub-ZSY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIm-Ns-ygY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="-180"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundFinal" width="564" height="1001"/>
+        <image name="buttonAbout" width="99" height="90"/>
         <image name="flightText" width="331" height="65"/>
+        <image name="gatwick" width="141" height="139"/>
+        <image name="heathrow" width="141" height="139"/>
+        <image name="luton" width="141" height="139"/>
         <image name="main" width="564" height="1063"/>
         <image name="mainLogo" width="204" height="270"/>
-        <image name="menuBackground" width="564" height="1001"/>
+        <image name="menuLogo" width="136" height="51"/>
+        <image name="menuM" width="21" height="19"/>
+        <image name="stantead" width="141" height="139"/>
         <image name="textMain2" width="322" height="32"/>
     </resources>
 </document>

@@ -20,9 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func ClickTest(sender: AnyObject) {
+    @IBAction func menuButton(sender: AnyObject) {
         
     }
+
 
 }
 
