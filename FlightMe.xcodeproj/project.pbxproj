@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F0C5A561F279DC000F1AF1A /* MenuOnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0C5A551F279DC000F1AF1A /* MenuOnController.swift */; settings = {ASSET_TAGS = (); }; };
-		3F1CA88B1F323ADF001B50DA /* frontButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CA88A1F323ADF001B50DA /* frontButton.swift */; settings = {ASSET_TAGS = (); }; };
+		3F0C5A561F279DC000F1AF1A /* MenuOnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0C5A551F279DC000F1AF1A /* MenuOnController.swift */; };
+		3F1CA88B1F323ADF001B50DA /* frontButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CA88A1F323ADF001B50DA /* frontButton.swift */; };
+		3F4C21311F3B949F00081491 /* buttonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C21301F3B949F00081491 /* buttonViewController.swift */; };
+		3F4C21331F3B99FA00081491 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C21321F3B99FA00081491 /* CircularTransition.swift */; };
 		3F5509301F266B4000DE9643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55092F1F266B4000DE9643 /* AppDelegate.swift */; };
 		3F5509321F266B4000DE9643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5509311F266B4000DE9643 /* ViewController.swift */; };
 		3F5509351F266B4000DE9643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5509331F266B4000DE9643 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		3F0C5A551F279DC000F1AF1A /* MenuOnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOnController.swift; sourceTree = "<group>"; };
 		3F1CA88A1F323ADF001B50DA /* frontButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = frontButton.swift; sourceTree = "<group>"; };
+		3F4C21301F3B949F00081491 /* buttonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buttonViewController.swift; sourceTree = "<group>"; };
+		3F4C21321F3B99FA00081491 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		3F55092C1F266B3F00DE9643 /* FlightMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F55092F1F266B4000DE9643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F5509311F266B4000DE9643 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				3F0C5A551F279DC000F1AF1A /* MenuOnController.swift */,
+				3F4C21301F3B949F00081491 /* buttonViewController.swift */,
+				3F4C21321F3B99FA00081491 /* CircularTransition.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -112,11 +118,14 @@
 		3F5509241F266B3F00DE9643 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "MIHAIL BUTNARU";
 				TargetAttributes = {
 					3F55092B1F266B3F00DE9643 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 44BDED39CD;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -157,9 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5509321F266B4000DE9643 /* ViewController.swift in Sources */,
+				3F4C21331F3B99FA00081491 /* CircularTransition.swift in Sources */,
 				3F1CA88B1F323ADF001B50DA /* frontButton.swift in Sources */,
 				3F0C5A561F279DC000F1AF1A /* MenuOnController.swift in Sources */,
 				3F5509301F266B4000DE9643 /* AppDelegate.swift in Sources */,
+				3F4C21311F3B949F00081491 /* buttonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,13 +209,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 44BDED39CD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -224,6 +239,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = Automatic;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -242,13 +258,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 44BDED39CD;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -261,7 +281,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE_SPECIFIER = Automatic;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -270,10 +292,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 44BDED39CD;
 				INFOPLIST_FILE = FlightMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlightMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FlightMe.identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -281,10 +307,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 44BDED39CD;
 				INFOPLIST_FILE = FlightMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlightMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FlightMe.identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

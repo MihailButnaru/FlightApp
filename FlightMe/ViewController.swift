@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func menuButton(sender: AnyObject) {
+    @IBAction func menuButton(_ sender: AnyObject) {
         
     }
 
