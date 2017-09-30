@@ -26,18 +26,33 @@ class Details {
 }
 // , UITableViewDataSource
 
-class GatwickContro: UIViewController, UITableViewDataSource {
+class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var fetchDetails = [Details]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var gatwickSegmentedControl: UISegmentedControl!
     
+    // Array with all the data API
     var allFlightsArray = [AnyObject]()
+    
+    //Departure
     var destinationArray = [String]()
     var flightArray = [AnyObject]()
+    var flightNumber = [String]()
     var carrierArray = [String]()
     var terminalArray = [String]()
     var timeArray = [String]()
+    var flightTerminal = [String]()
+    var yesOrNo = [Bool]()
+    
+    
+    // Arrivals
+    var destinationA = [String]()
+    var flightNumberA = [String]()
+    var carrierA = [String]()
+    var timeA = [String]()
+    var flightTerminalA = [String]()
     
     
     
@@ -47,6 +62,20 @@ class GatwickContro: UIViewController, UITableViewDataSource {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func removeDuplicates(array: [AnyObject]) -> [AnyObject]{
+        var encountered = Set<String>()
+        var result: [AnyObject] = []
+        for value in self.allFlightsArray {
+            if encountered.contains(value["flightNumber"] as! String){
+                
+            }else{
+                encountered.insert(value["flightNumber"] as! String)
+                result.append(value["flightNumber"] as! AnyObject)
+            }
+        }
+        return result
     }
     
      // API Gatwick is mixed with DATA // Departure & Arrivals
@@ -65,7 +94,6 @@ class GatwickContro: UIViewController, UITableViewDataSource {
             }else{
                 do{
                     let fetchedData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSDictionary
-//                    print(fetchedData)
                     let data = fetchedData["detail"] as! NSArray
                     
                     for index in 0...data.count-1 {
@@ -73,11 +101,10 @@ class GatwickContro: UIViewController, UITableViewDataSource {
                         let aObject1 = aObject["data"] as! [String : AnyObject]
                         let category = aObject1["category"] as! String
                         let aObject2 = aObject1["flightInfo"] as! [String : AnyObject]
-                        let flightCarrier = aObject2["flightCarrier"] as! String
-                        let flightIsDeparture = aObject2["flightIsDeparture"] as! BooleanLiteralType
-                        let flightDateTime = aObject2["flightDateTime"] as! String
                         
-//                        
+//                        let flightCarrier = aObject2["flightCarrier"] as! String
+//                        let flightIsDeparture = aObject2["flightIsDeparture"] as! BooleanLiteralType
+//                        let flightDateTime = aObject2["flightDateTime"] as! String
 //                        print(category)
 //                        print(flightCarrier)
 //                        print(aObject2)
@@ -88,23 +115,39 @@ class GatwickContro: UIViewController, UITableViewDataSource {
 
                         
                     }
+                    let rDuplicates = self.removeDuplicates(array: self.allFlightsArray)
+                    print(rDuplicates)
                     
-                    
-                    for flight in self.allFlightsArray{
-
-                        self.carrierArray.append(flight["flightCarrier"] as! String)
-                        let fnumber = flight["flightNumber"] as! String
-                        let fdestination = flight["flightCity"] as! String
-                        let fdatetime = flight["flightDateTime"] as! String
-                        let fterminal = flight["flightTerminal"] as! String
                         
-//                        print(fnumber)
-//                        print(fdestination)
-//                        print(fdatetime)
-//                        print(fterminal)
+                        for flight in self.allFlightsArray{
+                            let arrOrDep = flight["flightIsDeparture"] as! BooleanLiteralType
+                            
+                            if arrOrDep == false {
+                                
+                                self.carrierArray.append(flight["flightCarrier"] as! String)
+                                self.destinationArray.append(flight["flightCity"] as! String)
+                                self.timeArray.append(flight["flightDateTime"] as! String)
+                                self.flightNumber.append(flight["flightNumber"] as! String)
+                                self.flightTerminal.append(flight["flightTerminal"] as! String)
+                                self.yesOrNo.append(flight["flightIsDeparture"] as! BooleanLiteralType)
+                            
+                            }else{
+                                
+                                self.carrierA.append(flight["flightCarrier"] as! String)
+                                self.destinationA.append(flight["flightCity"] as! String)
+                                self.timeA.append(flight["flightDateTime"] as! String)
+                                self.flightNumberA.append(flight["flightNumber"] as! String)
+                                self.flightTerminalA.append(flight["flightTerminal"] as! String)
+                                
+                            }
                     }
+//                    print(self.destinationArray)
+//                    print(self.carrierArray)
+//                    print(self.timeArray)
+//                    print(self.flightNumber)
+//                    print(self.flightTerminal)
+//                      print(self.yesOrNo)
                     
-                    print(self.carrierArray)
                     OperationQueue.main.addOperation({
                         self.tableView.reloadData()
                     })
@@ -125,14 +168,56 @@ class GatwickContro: UIViewController, UITableViewDataSource {
     }
     
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        
+        var returnValue = 0
+        switch(gatwickSegmentedControl.selectedSegmentIndex){
+        case 0:
+            returnValue = self.carrierArray.count
+            break
+        case 1:
+            returnValue = self.carrierA.count
+            break
+        default:
+            break
+        }
+        return returnValue
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-        cell.destination.text = "text"
+        switch(gatwickSegmentedControl.selectedSegmentIndex){
+        case 0:
+            cell.destination.text = destinationArray[indexPath.row]
+            cell.terminal.text = flightTerminal[indexPath.row]
+            cell.time.text = timeArray[indexPath.row]
+            cell.location.text = flightNumber[indexPath.row]
+            cell.company.text = carrierArray[indexPath.row]
+            break
+        case 1:
+            cell.destination.text = destinationA[indexPath.row]
+            cell.terminal.text = flightTerminalA[indexPath.row]
+            cell.time.text = timeA[indexPath.row]
+            cell.location.text = flightNumberA[indexPath.row]
+            cell.company.text = carrierA[indexPath.row]
+            break
+        default:
+            break
+        }
+        
+        
         return cell
     }
+   
+    // Function Action SegmentedController
+    
+    @IBAction func segmentAciton(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            tableView.reloadData()
+        }else{
+            tableView.reloadData()
+        }
+    }
+    
     
     
 }

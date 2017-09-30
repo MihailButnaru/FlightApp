@@ -222,6 +222,9 @@
                                     <segment title="Departures"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentAciton:" destination="7di-Ur-71f" eventType="valueChanged" id="J98-sb-qaA"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-Mf-8YH">
                                 <rect key="frame" x="346" y="10" width="22" height="18"/>
@@ -251,7 +254,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asX-p5-3UY">
-                                                    <rect key="frame" x="243" y="29" width="107" height="20"/>
+                                                    <rect key="frame" x="242" y="28" width="107" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -272,7 +275,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dw-ZG-VNT">
-                                                    <rect key="frame" x="8" y="28" width="107" height="21"/>
+                                                    <rect key="frame" x="8" y="27" width="106" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -289,6 +292,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7di-Ur-71f" id="XTt-me-t80"/>
+                                    <outlet property="delegate" destination="7di-Ur-71f" id="3Sf-ik-5MU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -301,12 +308,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="MxX-g5-Btp"/>
                     <connections>
+                        <outlet property="gatwickSegmentedControl" destination="Siu-Px-uUf" id="Wbv-SJ-Y6N"/>
                         <outlet property="tableView" destination="ieo-cI-RVM" id="elH-ky-RME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIZ-hq-prI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179.5" y="-253.5"/>
+            <point key="canvasLocation" x="1188" y="-252"/>
         </scene>
     </scenes>
     <resources>
