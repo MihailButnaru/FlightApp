@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlightMe/GatwickContro.swift"
-            timestampString = "527032759.819577"
+            timestampString = "529149491.306081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init(category:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init(category:flightCarrier:city:destination:flightNumberC:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,13 +58,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlightMe/GatwickContro.swift"
-            timestampString = "528502728.151585"
+            timestampString = "529154665.851671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "removeDuplicates(array:)"
-            landmarkType = "7">
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "GatwickContro"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlightMe/GatwickContro.swift"
+            timestampString = "529149491.306081"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "GatwickContro"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlightMe.GatwickContro.allFlightsArray.getter : Swift.Array&lt;Swift.AnyObject&gt;"
+                  moduleName = "FlightMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MichaelButnaru/Desktop/GitHub/FlightApp/FlightMe/GatwickContro.swift"
+                  timestampString = "529148163.845744"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlightMe.GatwickContro.allFlightsArray.setter : Swift.Array&lt;Swift.AnyObject&gt;"
+                  moduleName = "FlightMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MichaelButnaru/Desktop/GitHub/FlightApp/FlightMe/GatwickContro.swift"
+                  timestampString = "529148163.852368"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlightMe.GatwickContro.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; FlightMe.GatwickContro"
+                  moduleName = "FlightMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MichaelButnaru/Desktop/GitHub/FlightApp/FlightMe/GatwickContro.swift"
+                  timestampString = "529148163.856486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "291">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlightMe.GatwickContro.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FlightMe.GatwickContro&gt;"
+                  moduleName = "FlightMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MichaelButnaru/Desktop/GitHub/FlightApp/FlightMe/GatwickContro.swift"
+                  timestampString = "529148163.8608"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "207">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

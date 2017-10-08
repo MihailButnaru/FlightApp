@@ -11,27 +11,38 @@ import UIKit
 
 class Details {
     
-    let category: String
-//    let flightCarrier: String
-//    let city: String
-//    let destination: String
-//    let isDeparture: Int
-//    let flightNumber: Int
-//    let terminal: String
+    var category: String
+    var flightCarrier: String
+    var city: String
+    var destination: String
+    var flightNumberC: Int
+
     
-    init(category: String){
+    init(category: String, flightCarrier : String, city : String, destination : String, flightNumberC : Int){
         self.category = category
+        self.flightCarrier = flightCarrier
+        self.city = city
+        self.destination = destination
+        self.flightNumberC = flightNumberC
     }
     
 }
 // , UITableViewDataSource
 
-class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     var fetchDetails = [Details]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gatwickSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var isSearching = false
+    
+    //Access the variables from the outer class
+    
+    
     
     // Array with all the data API
     var allFlightsArray = [AnyObject]()
@@ -54,29 +65,33 @@ class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegat
     var timeA = [String]()
     var flightTerminalA = [String]()
     
+    //Lets store the details here
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         parseData()
+      
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
     
-    func removeDuplicates(array: [AnyObject]) -> [AnyObject]{
-        var encountered = Set<String>()
-        var result: [AnyObject] = []
-        for value in self.allFlightsArray {
-            if encountered.contains(value["flightNumber"] as! String){
-                
-            }else{
-                encountered.insert(value["flightNumber"] as! String)
-                result.append(value["flightNumber"] as! AnyObject)
-            }
-        }
-        return result
-    }
+//    func removeDuplicates(array: [AnyObject]) -> [AnyObject]{
+//        var encountered = Set<String>()
+//        var result: [AnyObject] = []
+//        for value in self.allFlightsArray {
+//            if encountered.contains(value["flightNumber"] as! String){
+//                
+//            }else{
+//                encountered.insert(value["flightNumber"] as! String)
+//                result.append(value["flightNumber"] as! AnyObject)
+//            }
+//        }
+//        return result
+//    }
     
      // API Gatwick is mixed with DATA // Departure & Arrivals
     func parseData(){
@@ -115,8 +130,8 @@ class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegat
 
                         
                     }
-                    let rDuplicates = self.removeDuplicates(array: self.allFlightsArray)
-                    print(rDuplicates)
+//                    let rDuplicates = self.removeDuplicates(array: self.allFlightsArray)
+//                    print(rDuplicates)
                     
                         
                         for flight in self.allFlightsArray{
@@ -170,6 +185,8 @@ class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegat
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var returnValue = 0
+        
+            
         switch(gatwickSegmentedControl.selectedSegmentIndex){
         case 0:
             returnValue = self.carrierArray.count
@@ -179,11 +196,17 @@ class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegat
             break
         default:
             break
-        }
+            }
+        
         return returnValue
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        
+       
+            
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
         switch(gatwickSegmentedControl.selectedSegmentIndex){
         case 0:
@@ -206,6 +229,22 @@ class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        
+        if searchText == ""{
+            parseData()
+        }else{
+            
+            print(self.allFlightsArray)
+            if searchBar.selectedScopeButtonIndex == 0{
+                
+            } else{
+               
+                
+            }}
+        self.tableView.reloadData()
     }
    
     // Function Action SegmentedController
