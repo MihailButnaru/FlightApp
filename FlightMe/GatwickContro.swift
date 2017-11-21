@@ -237,7 +237,7 @@ class GatwickContro: UIViewController, UITableViewDataSource, UITableViewDelegat
             parseData()
         }else{
             
-            print(self.allFlightsArray)
+            
             if searchBar.selectedScopeButtonIndex == 0{
                 
             } else{
